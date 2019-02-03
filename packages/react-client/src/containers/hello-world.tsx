@@ -17,7 +17,7 @@ const HelloWorld = () => (
         return "error!";
       }
       return (
-        <div>{data.hello}</div>
+        <div>Hello {data.hello}</div>
       );
     }}
   </Query>
