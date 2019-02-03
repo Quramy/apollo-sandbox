@@ -1,0 +1,42 @@
+{
+  "name": "react-client",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Yosuke Kurami <yosuke.kurami@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/react-client.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "scripts": {
+    "watch": "webpack --watch --mode=\"development\"",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "react": "^16.7.0",
+    "typescript": "^3.3.1",
+    "webpack": "^4.29.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.1",
+    "@types/react-dom": "^16.0.11",
+    "apollo-client": "^2.4.12",
+    "apollo-react": "^0.7.1",
+    "light-ts-loader": "^1.1.2",
+    "react": "^16.7.0",
+    "react-apollo": "^2.4.1",
+    "react-dom": "^16.7.0",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "ts-loader": "^5.3.3",
+    "webpack-cli": "^3.2.1"
+  }
+}
