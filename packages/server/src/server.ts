@@ -22,6 +22,8 @@ const server = new ApolloServer({
 
 const app = express();
 
+server.applyMiddleware({ app, path: "/graphql" });
+
 app.use("/static", express.static(path.resolve(__dirname, "../../../dist/public")));
 app.use("/", (req, res) => {
   res.send(`
@@ -38,7 +40,6 @@ app.use("/", (req, res) => {
   `);
 });
 
-server.applyMiddleware({ app });
 
 const port = 4000;
 

@@ -1,11 +1,4 @@
-# `server`
+This is a GraphQL server package.
 
-> TODO: description
-
-## Usage
-
-```
-const server = require('server');
-
-// TODO: DEMONSTRATE API
-```
+- Express
+- apollo-server

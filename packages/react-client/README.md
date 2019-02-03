@@ -1,11 +1,4 @@
-# `react-client`
+This is a client package.
 
-> TODO: description
-
-## Usage
-
-```
-const reactClient = require('react-client');
-
-// TODO: DEMONSTRATE API
-```
+- React
+- Apollo

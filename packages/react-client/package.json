@@ -18,18 +18,33 @@
   },
   "scripts": {
     "watch": "webpack --watch --mode=\"development\"",
+    "codegen": "apollo client:codegen --target=typescript",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "devDependencies": {
+    "apollo": "^2.4.3",
     "react": "^16.7.0",
     "typescript": "^3.3.1",
     "webpack": "^4.29.0"
   },
+  "apollo": {
+    "client": {
+      "name": "react-client",
+      "tagName": "gql",
+      "service": {
+        "name": "server",
+        "url": "http://localhost:4000/graphql"
+      }
+    }
+  },
   "dependencies": {
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.0.11",
+    "apollo-cache-inmemory": "^1.4.2",
     "apollo-client": "^2.4.12",
+    "apollo-link-http": "^1.5.11",
     "apollo-react": "^0.7.1",
+    "graphql-tag": "^2.10.1",
     "light-ts-loader": "^1.1.2",
     "react": "^16.7.0",
     "react-apollo": "^2.4.1",
