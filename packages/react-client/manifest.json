@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "operations": [
+    {
+      "signature": "b2e40a9e74d6b015fde2d9d2c333e2e91735275d00b1ea308cab6a18cf6cc4d1",
+      "document": "query MyQuery{hello}",
+      "metadata": {
+        "engineSignature": "query MyQuery{hello}"
+      }
+    }
+  ]
+}

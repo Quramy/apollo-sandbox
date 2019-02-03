@@ -1,6 +1,8 @@
 import path from "path";
 import { ApolloServer, gql } from "apollo-server-express";
 import express from "express";
+import morgan from "morgan";
+import { createCache } from "./graphql/persist-query-cache";
 
 const typeDefs = gql`
   type Query {
@@ -18,9 +20,12 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  persistedQueries: { cache: createCache() },
 });
 
 const app = express();
+
+app.use(morgan("combined"));
 
 server.applyMiddleware({ app, path: "/graphql" });
 

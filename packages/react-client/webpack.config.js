@@ -1,16 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
-
-const basePlugins = [
-  new webpack.LoaderOptionsPlugin({
-    tsConfigPath: path.resolve(__dirname, "src/tsconfig.json"),
-  }),
-];
+const getTransformer = require('@quramy/ts-transform-graphql-tag').getTransformer
 
 module.exports = function(env) {
-  const plugins = [
-    ...basePlugins,
-  ];
   return {
     entry: {
       main: path.resolve(__dirname, "src/app.tsx"),
@@ -24,23 +16,16 @@ module.exports = function(env) {
     },
     module: {
       rules: [
-        { test: /\.tsx?$/, exclude: /node_modules/, loader: "light-ts-loader" },
-        // {
-        //   test: /\.css$/,
-        //   use: ExtractTextPlugin.extract([
-        //     {
-        //       loader: "css-loader",
-        //       options: {
-        //         modules:true,
-        //         localIdentName: env !== "prod" ? "[name]_[local]" : "[hash:base64]"
-        //       },
-        //     },
-        //     "postcss-loader"
-        //   ]),
-        // },
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          loader: "ts-loader",
+          options: {
+            getCustomTransformers: () => ({ before: [getTransformer()] }),
+          },
+        },
       ],
     },
-    plugins,
     devServer: {
       port: 4000,
       contentBase: path.join(__dirname, "public"),
