@@ -10,6 +10,7 @@ export function createClient() {
     useGETForHashedQueries: true,
     // the `__signature__` field is attached by custom ts transformer.
     generateHash: (q: any) => q["__signature__"],
+    disable: () => location.port !== "4100",
   }).concat(httpLink);
   const client = new ApolloClient({
     link,

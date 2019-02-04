@@ -791,10 +791,10 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
 
-"@quramy/ts-transform-graphql-tag@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@quramy/ts-transform-graphql-tag/-/ts-transform-graphql-tag-0.3.1.tgz#e309ddfe027ec19a41aaa7d47453037e61e6a620"
-  integrity sha512-nwLpcSwSZHv1j88xjqTFuNUnlEYynifEeWYL6mxvlTN9LZ4ib4antnfola0FnkkjYpK+pxQDgRF8pb3XS30F+A==
+"@quramy/ts-transform-graphql-tag@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@quramy/ts-transform-graphql-tag/-/ts-transform-graphql-tag-0.3.2.tgz#7dbaa02f05f81a50c727abdd6c7a0d794ca1c73e"
+  integrity sha512-irq/nUok6N04pDV7yLObjlM7wUiJFzkM3WWVUvhtwrJH7VlKyB4gl+w2jLtO7hVfznwwt84+aLLkLGWbM1YPMw==
   dependencies:
     apollo-engine-reporting "^0.2.2"
 

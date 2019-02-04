@@ -1,36 +1,17 @@
 import path from "path";
-import { IResolvers } from "graphql-tools";
-import { ApolloServer, gql } from "apollo-server-express";
+import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import morgan from "morgan";
+import { typeDefs, resolvers } from "./graphql";
 
-const typeDefs = gql`
-  type Query {
-    hello: String!
-    dateTime: String!
-  }
-`;
+const app = express();
 
-const resolvers: IResolvers = {
-  Query: {
-    hello: (root, args, ctx, { cacheControl }) => {
-      cacheControl.setCacheHint({ maxAge: 10000 });
-      return "world";
-    },
-    dateTime: (root, args, ctx, { cacheControl }) => {
-      return new Date().toISOString();
-    },
-  },
-};
+app.use(morgan("combined"));
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
-
-const app = express();
-
-app.use(morgan("combined"));
 
 server.applyMiddleware({ app, path: "/graphql" });
 

@@ -2,12 +2,15 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: MyQuery
+// GraphQL query operation: UserSummary
 // ====================================================
 
-export interface MyQuery {
-  /**
-   * A simple type for getting started!
-   */
-  hello: string | null;
+export interface UserSummary_user {
+  __typename: "User";
+  id: string;
+  name: string;
+}
+
+export interface UserSummary {
+  user: UserSummary_user;
 }

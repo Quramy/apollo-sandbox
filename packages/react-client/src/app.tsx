@@ -4,7 +4,8 @@ import { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
 import { createClient } from "./apollo";
 
-import HelloWorld from "./containers/hello-world";
+import UserSummary from "./containers/user-summary";
+import Ranking from "./containers/ranking";
 
 const elm = document.getElementById("app");
 
@@ -12,7 +13,9 @@ if (elm) {
   const client = createClient();
   render((
     <ApolloProvider client={client}>
-      <HelloWorld />
+      <UserSummary />
+      <hr />
+      <Ranking />
     </ApolloProvider>
   ), elm);
 }
