@@ -39,6 +39,17 @@ app.use("/graphql", proxy("http://localhost:4000", {
       variables,
     });
   },
+  userResDecorator: (proxyRes, proxyResData, userReq, userRes) => {
+    const d = JSON.parse(proxyResData.toString("utf8"));
+    if (!d || !d.extensions) return proxyResData;
+    const { cacheControl } = d.extensions;
+    const hints = cacheControl.hints.map((h: any) => h.maxAge) as number[];
+    const min = Math.min(...hints);
+    if (min) {
+      userRes.setHeader("Cache-Control", `max-age=${min}`);
+    }
+    return proxyResData;
+  },
 }));
 
 app.use("/", proxy("http://localhost:4000", {

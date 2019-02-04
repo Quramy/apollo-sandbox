@@ -9,6 +9,7 @@ declare module "express-http-proxy" {
       proxyReqOptDecorator?: (proxyReqOpts: RequestOptions, srcReq: Request) => RequestOptions;
       proxyReqBodyDecorator?: (bodyContent: string, srcReq: Request) => string | Promise<string>;
       userResHeaderDecorator?: (headers: IncomingHttpHeaders, userReq: Request, userRes: StaticCoreResponse, proxyReq: Request, proxyRes: StaticCoreResponse) => OutgoingHttpHeaders;
+      userResDecorator?: (proxyRes: StaticCoreResponse, proxyResData: Buffer, userReq: Request, userRes: StaticCoreResponse) => string | Buffer | Promise<Buffer>;
   }
   
   function proxy(host: string, options?: ProxyOptions): RequestHandler;

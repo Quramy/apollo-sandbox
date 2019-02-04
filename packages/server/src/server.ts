@@ -11,6 +11,7 @@ app.use(morgan("combined"));
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  cacheControl: true,
 });
 
 server.applyMiddleware({ app, path: "/graphql" });
