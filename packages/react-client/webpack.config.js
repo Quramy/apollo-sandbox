@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const { getTransformer } = require("ts-transform-graphql-tag");
+const { getTransformer } = require("@quramy/ts-transform-graphql-tag");
 
 module.exports = function(env) {
   return {

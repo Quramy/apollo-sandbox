@@ -5,6 +5,7 @@ import { Query } from "react-apollo";
 const QUERY = gql`
   query MyQuery {
     hello,
+    dateTime,
   }
 `;
 

@@ -1,26 +1,31 @@
 import path from "path";
+import { IResolvers } from "graphql-tools";
 import { ApolloServer, gql } from "apollo-server-express";
 import express from "express";
 import morgan from "morgan";
-import { createCache } from "./graphql/persist-query-cache";
 
 const typeDefs = gql`
   type Query {
-    "A simple type for getting started!"
-    hello: String
+    hello: String!
+    dateTime: String!
   }
 `;
 
-const resolvers = {
+const resolvers: IResolvers = {
   Query: {
-    hello: () => "world",
+    hello: (root, args, ctx, { cacheControl }) => {
+      cacheControl.setCacheHint({ maxAge: 10000 });
+      return "world";
+    },
+    dateTime: (root, args, ctx, { cacheControl }) => {
+      return new Date().toISOString();
+    },
   },
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  persistedQueries: { cache: createCache() },
 });
 
 const app = express();

@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "manifest": "lerna run graphql:manifest --scope=\"react-client\"",
     "watch": "lerna run watch --parallel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

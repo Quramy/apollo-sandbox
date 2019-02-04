@@ -11,14 +11,14 @@ It includes:
 ```sh
 $ yarn bootstrap
 $ yarn watch
-$ open http://localhost:4000/
+$ yarn manifest
+$ open http://localhost:4100/
 ```
 
 ### Create GraphQL Manifest
 
 ```sh
-$ cd packages/react-client
-$ yarn graphql:manifest
+$ yarn manifest
 ```
 
 The above command creates graphql-manifest.json under the `dist` dir.
