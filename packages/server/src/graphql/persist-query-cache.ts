@@ -1,11 +1,19 @@
+import { parse } from "graphql";
+import { defaultGenerateHash } from "apollo-link-persisted-queries";
+
 export function createCache() {
-  let manifest: { operations: any[] } = { operations: [] };
+  let manifest: { operations: { document: string, signature: string}[] } = { operations: [] };
   try {
     manifest = require("../../../../dist/graphql-manifest.json");
   } catch (e) {
     console.warn("No manifest file. Try to run yarn graphql:manifest script in react-client dir.");
   }
-  const queryMap = manifest.operations.reduce((acc: any, x: any) => ({ ...acc, [x.signature]: x }), { });
+
+  const queryMap = manifest.operations.reduce((acc, { document }) => {
+    const key = defaultGenerateHash(parse(document));
+    return { ...acc, [key]: { document } };
+  }, { } as { [key: string]: { document: string } });
+
   return {
     // This cache object resolves GraphQL Query documents from sha256 hash.
     get: (key: string) => {

@@ -791,13 +791,6 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
 
-"@quramy/ts-transform-graphql-tag@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@quramy/ts-transform-graphql-tag/-/ts-transform-graphql-tag-0.3.0.tgz#63ad073c5dcb42f0ceac5f6412056452a75b2925"
-  integrity sha512-2nPN7HfPexLe+wq6A6FE4JQJ7s9dzHI8nJbfYSbD++9YgovWnZEE9AdWKKelpTFwifc7JxXyXCn9nzngT54YTA==
-  dependencies:
-    apollo-engine-reporting "^0.2.2"
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -1276,7 +1269,7 @@ apollo-engine-reporting@0.2.1:
     graphql-extensions "0.4.2"
     lodash "^4.17.10"
 
-apollo-engine-reporting@0.2.2, apollo-engine-reporting@^0.2.2:
+apollo-engine-reporting@0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/apollo-engine-reporting/-/apollo-engine-reporting-0.2.2.tgz#ae57972bfd7e499f510335014d7ba7390508aa6b"
   dependencies:
@@ -6982,6 +6975,11 @@ ts-node@^7:
     mkdirp "^0.5.1"
     source-map-support "^0.5.6"
     yn "^2.0.0"
+
+ts-transform-graphql-tag@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/ts-transform-graphql-tag/-/ts-transform-graphql-tag-0.2.1.tgz#f596c491196b6a6a65b65a8b99bf6e2314c78017"
+  integrity sha512-gciNzCpVafccayI/VQKU2ROaol4gMpz0t5sAW/jzG/J/wnjPYCn06yKzlM4mkQ5tjCvPmFuZnLYF4i0tUiIiMQ==
 
 tsconfig@^7.0.0:
   version "7.0.0"

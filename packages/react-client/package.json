@@ -41,7 +41,7 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "@quramy/ts-transform-graphql-tag": "^0.3.0",
+    "ts-transform-graphql-tag": "^0.2.0",
     "apollo": "^2.4.3",
     "react": "^16.7.0",
     "ts-loader": "^5.3.3",
